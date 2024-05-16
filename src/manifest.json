@@ -1,0 +1,35 @@
+{
+    "name": "Dreamtask Extension",
+    "version": "1.0.0",
+    "description": "AI Planner for Notion",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "js": ["content.js"],
+            "matches": ["https://*.notion.so/*"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://dreamtaskbeta.anvil.app/*",
+        "https://app.dreamtask.ca/*"
+    ],
+    "icons": {
+        "16": "dreamtaskicon.png",
+        "48": "dreamtaskicon.png",
+        "128": "dreamtaskicon.png"
+    },
+    "action": {
+        "default_title": "Created by Yahia, enjoy! :)",
+        "default_popup": "popup.html",
+        "default_icon": "dreamtaskicon.png"
+    }
+}
